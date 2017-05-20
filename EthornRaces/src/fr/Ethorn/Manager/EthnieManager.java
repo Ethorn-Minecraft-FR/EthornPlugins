@@ -6,7 +6,9 @@ import java.sql.SQLException;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 
+import fr.Ethorn.Races.Caste;
 import fr.Ethorn.Races.Main;
+import fr.Ethorn.Races.Race;
 import net.md_5.bungee.api.ChatColor;
 
 /**
@@ -73,9 +75,14 @@ public class EthnieManager
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+			
 
 			ConfigurationSection race = sec.getConfigurationSection(key);
 
+			
+			Race objRace = new Race(race.getString("name"));			
+
+			
 			ConfigurationSection casteSec = race.getConfigurationSection("class"); //Contiens les castes
 
 			Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + " - " + race.getString("name") + " est ajouté dans la liste des races."); //Trace Console
@@ -104,6 +111,14 @@ public class EthnieManager
 					} catch (SQLException e) {
 						e.printStackTrace();
 					}			
+					
+					new Caste(objRace, 
+							caste.getString("name"),
+							caste.getInt("health"),
+							caste.getInt("Strength"),
+							caste.getInt("Speed"),
+							caste.getInt("Shield"));
+					
 				}
 			}
 		}

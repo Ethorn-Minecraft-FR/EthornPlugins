@@ -35,6 +35,8 @@ public class Main extends JavaPlugin
 	 */
 	public PluginManager plugManager;
 	
+	
+	
 	//Listener
 	
 	/**
@@ -52,6 +54,9 @@ public class Main extends JavaPlugin
 	public ListenerBlock listenerBlockBuild;
 	
 	
+	
+	
+	
 	//Manager
 	
 	/**
@@ -66,7 +71,7 @@ public class Main extends JavaPlugin
 	 * 
 	 * @author CIad
 	 */
-	public EthnieManager ethnieManager;
+	public EthnieManager ethnieManager;	
 	
 	//DATA
 	
@@ -89,13 +94,18 @@ public class Main extends JavaPlugin
 		this.playerManager = new PlayerManager(this);
 		this.ethnieManager = new EthnieManager(this);
 		this.dataManager = new PlayerDataManager();
-
+		
 		//Listener
 		this.listenerPlayer = new ListenerPlayer(this);
 		this.listenerBlockBuild = new ListenerBlock();
 		
+		
+		
+		
 		this.plugManager.registerEvents(this.listenerPlayer, this);
 		this.plugManager.registerEvents(this.listenerBlockBuild, this);
+		
+		
 		
 		SQL.truncate("users");
 	}

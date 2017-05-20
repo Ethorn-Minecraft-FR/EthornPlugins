@@ -1,11 +1,11 @@
 # Default configuration for EthornRace by CIad
 Race:
   unknown:
-    id: 0
+    id: 1
     name: unknown
 
   ethnique:
-    id: 1
+    id: 2
     name: Ethniens
     class:
       beast:
@@ -23,7 +23,7 @@ Race:
         speed: 1
         shield: 0
   pure:
-    id: 2
+    id: 3
     name: Purs
     class:
       elf:
@@ -40,7 +40,7 @@ Race:
         speed: 3
         shield: 0
   celeste:
-    id: 3
+    id: 4
     name: Célestis
     class:
       seraph:
@@ -57,7 +57,7 @@ Race:
         speed: 2
         shield: 1
   tellurique:
-    id: 4
+    id: 5
     name: Telluriens
     class:
       dwarf:
@@ -74,7 +74,7 @@ Race:
         speed: 1
         shield: 2
   maudit:
-    id: 5
+    id: 6
     name: Damnés
     class:
       dragon:
