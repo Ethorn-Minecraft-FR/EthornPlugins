@@ -1,4 +1,5 @@
 # Default configuration for EthornRace by CIad
+
 Race:
   unknown:
     id: 0

@@ -5,3 +5,9 @@ description: Races manager
 author: CIad
 
 main: fr.Ethorn.Races.Main
+
+commands:
+  caste:
+    description: Liste de toutes les classe disponible pour toute les races
+  race:
+    description: Liste de toutes les races disponibles sur le serveur 
