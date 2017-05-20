@@ -1,0 +1,92 @@
+# Default configuration for EthornRace by CIad
+Race:
+  unknown:
+    id: 0
+    name: unknown
+
+  ethnique:
+    id: 1
+    name: Ethniens
+    class:
+      beast:
+        name: Homme-bête
+        health: 13
+        strength: 4
+        speed: 3
+        shield: 3
+        blocks-interdict: '75, 76, 93, 94, 149, 150, 152, 331, 356, 404'
+
+      human:
+        name: Humain
+        health: 10
+        strength: 1
+        speed: 1
+        shield: 0
+  pure:
+    id: 2
+    name: Purs
+    class:
+      elf:
+        name: Elfe
+        health: 13
+        strength: 1
+        speed: 2
+        shield: 1
+
+      fairy:
+        name: Fée
+        health: 8
+        strength: 1
+        speed: 3
+        shield: 0
+  celeste:
+    id: 3
+    name: Célestis
+    class:
+      seraph:
+        name: Séraphin
+        health: 15
+        strength: 1
+        speed: 2
+        shield: 0
+
+      fallen:
+        name: Déchu
+        health: 13
+        strength: 1
+        speed: 2
+        shield: 1
+  tellurique:
+    id: 4
+    name: Telluriens
+    class:
+      dwarf:
+        name: Nain
+        health: 5
+        strength: 3
+        speed: 1
+        shield: 3
+
+      gnome:
+        name: Gnôme
+        health: 7
+        strength: 2
+        speed: 1
+        shield: 2
+  maudit:
+    id: 5
+    name: Damnés
+    class:
+      dragon:
+        name: Dragon
+        health: 20
+        strength: 4
+        speed: 1
+        shield: 3
+
+      devil:
+        name: Démon
+        health: 15
+        strength: 3
+        speed: 1
+        shield: 2

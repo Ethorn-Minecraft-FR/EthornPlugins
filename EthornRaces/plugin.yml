@@ -1,0 +1,7 @@
+name: EthornRaces
+version: 1.0.0
+description: Races manager
+
+author: CIad
+
+main: fr.Ethorn.Races.Main
