@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/EthornPlugins.iml" filepath="$PROJECT_DIR$/EthornPlugins.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EthornRaces/EthornRaces.iml" filepath="$PROJECT_DIR$/EthornRaces/EthornRaces.iml" />
-    </modules>
-  </component>
-</project>
