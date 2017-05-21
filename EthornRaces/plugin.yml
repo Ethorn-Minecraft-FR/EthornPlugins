@@ -4,7 +4,7 @@ description: Races manager
 
 author: CIad
 
-main: fr.Ethorn.Races.Main
+main: fr.ethorn.races.main
 
 commands:
   caste:
