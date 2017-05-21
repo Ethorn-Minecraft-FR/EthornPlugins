@@ -6,6 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
+import fr.ethorn.boite.BoiteOutils;
 import fr.ethorn.manager.PlayerManager;
 import fr.ethorn.races.Caste;
 import fr.ethorn.races.Main;
@@ -48,7 +49,7 @@ public class JoinCasteCommand implements CommandExecutor {
 						
 						int indexCaste = -1;
 						//si la caste existe elle nous renvoie l'id de la position dans la liste des Caste sinon -1
-						if( (indexCaste = isCasteExiste(caste)) != -1){
+						if( (indexCaste = BoiteOutils.idCaste(caste) ) != -1){
 							
 							//on recupère la class caste qui correspond pour la mettre dans la hashmap
 							Caste casteClass = Caste.castes.get(indexCaste);
@@ -109,7 +110,7 @@ public class JoinCasteCommand implements CommandExecutor {
 		return "ok";
 	}
 
-	private int isCasteExiste(String caste){
+	/*private int isCasteExiste(String caste){
 		
 		//on parcoure la liste de nos castes
 		for(int i = 0 ; i < Caste.castes.size() ; i++){
@@ -125,7 +126,7 @@ public class JoinCasteCommand implements CommandExecutor {
 		
 		//si on a rien trouvé bas c'est que nada ça existe pas
 		return -1;
-	}
+	}*/
 	
 	
 	
