@@ -11,3 +11,5 @@ commands:
     description: Liste de toutes les classe disponible pour toute les races
   race:
     description: Liste de toutes les races disponibles sur le serveur 
+  casteJoin:
+    description: le joueur pourra rejoindre une castes avec cette commande

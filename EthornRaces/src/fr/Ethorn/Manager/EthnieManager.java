@@ -78,7 +78,6 @@ public class EthnieManager
 			
 
 			ConfigurationSection race = sec.getConfigurationSection(key);
-
 			
 			Race objRace = new Race(race.getString("name"));			
 

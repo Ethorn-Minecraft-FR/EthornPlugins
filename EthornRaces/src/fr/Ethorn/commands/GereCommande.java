@@ -93,10 +93,12 @@ public class GereCommande implements CommandExecutor {
 			listRaces.add("aucune races trouvé");
 		}
 		
+		//taille de l'interface des message : 53
+		
 		//on envoie la liste des castes
-		player.sendMessage("§e-----------------");
-		player.sendMessage("§e-    §cRaces      ");
-		player.sendMessage("§e-----------------");
+		player.sendMessage("§e--------------------");
+		player.sendMessage("§e-    §cRaces       -");
+		player.sendMessage("§e--------------------");
 		
 		//pour chaque élement dans la liste on fait un truc
 		listRaces.forEach( casteName -> {

@@ -1,6 +1,9 @@
 package fr.Ethorn.Races;
 
+import java.util.HashMap;
+
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,6 +12,7 @@ import fr.Ethorn.Listeners.ListenerBlock;
 import fr.Ethorn.Listeners.ListenerPlayer;
 import fr.Ethorn.Manager.EthnieManager;
 import fr.Ethorn.Manager.PlayerManager;
+import fr.Ethorn.commands.CommandeCasteJoin;
 import fr.Ethorn.commands.GereCommande;
 import net.md_5.bungee.api.ChatColor;
 
@@ -83,6 +87,11 @@ public class Main extends JavaPlugin
 	 */
 	public PlayerDataManager dataManager;
 	
+	/**
+	 * hash map qui permet de savoir quel joueur a quel Caste
+	 */
+	public static HashMap<Player,Caste> playerCaste = new HashMap<>();
+	
 	
 	/**
 	 * Contiens toutes les déclarations et initialisation des classes
@@ -102,13 +111,16 @@ public class Main extends JavaPlugin
 		
 		
 		
-		
+		//
 		this.plugManager.registerEvents(this.listenerPlayer, this);
 		this.plugManager.registerEvents(this.listenerBlockBuild, this);
+		
+		
 		
 		//commandes
 		//mettre toute les commandes dans cette méthodes
 		this.ajouteCommande();		
+		
 		
 		SQL.truncate("users");
 	}
@@ -151,6 +163,9 @@ public class Main extends JavaPlugin
 		
 		//commande pour listé les races
 		getCommand("race").setExecutor(new GereCommande());
+		
+		//commande pour listé les races
+		getCommand("casteJoin").setExecutor(new CommandeCasteJoin());
 		
 	}
 	
