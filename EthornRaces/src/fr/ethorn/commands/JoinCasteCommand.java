@@ -1,4 +1,4 @@
-package fr.Ethorn.commands;
+package fr.ethorn.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -6,11 +6,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
-import fr.Ethorn.Manager.PlayerManager;
-import fr.Ethorn.Races.Caste;
-import fr.Ethorn.Races.Main;
+import fr.ethorn.manager.PlayerManager;
+import fr.ethorn.races.Caste;
+import fr.ethorn.races.Main;
 
-public class CommandeCasteJoin implements CommandExecutor {
+public class JoinCasteCommand implements CommandExecutor {
 
 	
 	@Override

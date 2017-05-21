@@ -1,4 +1,4 @@
-package fr.Ethorn.Races;
+package fr.ethorn.races;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

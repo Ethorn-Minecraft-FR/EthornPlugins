@@ -1,4 +1,4 @@
-package fr.Ethorn.Manager;
+package fr.ethorn.manager;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 
-import fr.Ethorn.Races.Caste;
-import fr.Ethorn.Races.Main;
-import fr.Ethorn.Races.Race;
+import fr.ethorn.races.Caste;
+import fr.ethorn.races.Main;
+import fr.ethorn.races.Race;
 import net.md_5.bungee.api.ChatColor;
 
 /**

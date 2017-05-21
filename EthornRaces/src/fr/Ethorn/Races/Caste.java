@@ -1,4 +1,4 @@
-package fr.Ethorn.Races;
+package fr.ethorn.races;
 
 import java.util.ArrayList;
 
@@ -70,13 +70,14 @@ public class Caste
 		this.shield = pShield;
 		
 		castes.add(this);
+		Main.raceCaste.put(this, pRace);
 	}
 	
 	/**
 	 * Renvoie la caste actuelle
 	 * @return Caste
 	 */
-	public Caste getCaste()
+	public Caste getInstance()
 	{
 		return this;
 	}

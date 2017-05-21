@@ -1,4 +1,4 @@
-package fr.Ethorn.Manager;
+package fr.ethorn.manager;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import fr.Ethorn.Races.Caste;
-import fr.Ethorn.Races.Main;
+import fr.ethorn.races.Caste;
+import fr.ethorn.races.Main;
 
 /**
  * Gère les joueurs du serveur

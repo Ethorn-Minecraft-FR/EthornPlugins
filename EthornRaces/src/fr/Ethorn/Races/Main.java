@@ -1,4 +1,4 @@
-package fr.Ethorn.Races;
+package fr.ethorn.races;
 
 import java.util.HashMap;
 
@@ -7,13 +7,14 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.Ethorn.Cache.PlayerDataManager;
-import fr.Ethorn.Listeners.ListenerBlock;
-import fr.Ethorn.Listeners.ListenerPlayer;
-import fr.Ethorn.Manager.EthnieManager;
-import fr.Ethorn.Manager.PlayerManager;
-import fr.Ethorn.commands.CommandeCasteJoin;
-import fr.Ethorn.commands.GereCommande;
+import fr.ethorn.cache.PlayerDataManager;
+import fr.ethorn.commands.InfoCasteCommand;
+import fr.ethorn.commands.InfoRaceCommand;
+import fr.ethorn.commands.JoinCasteCommand;
+import fr.ethorn.listeners.ListenerBlock;
+import fr.ethorn.listeners.ListenerPlayer;
+import fr.ethorn.manager.EthnieManager;
+import fr.ethorn.manager.PlayerManager;
 import net.md_5.bungee.api.ChatColor;
 
 /**
@@ -92,6 +93,8 @@ public class Main extends JavaPlugin
 	 */
 	public static HashMap<Player,Caste> playerCaste = new HashMap<>();
 	
+	public static HashMap<Caste, Race> raceCaste = new HashMap<>();
+	
 	
 	/**
 	 * Contiens toutes les déclarations et initialisation des classes
@@ -119,7 +122,7 @@ public class Main extends JavaPlugin
 		
 		//commandes
 		//mettre toute les commandes dans cette méthodes
-		this.ajouteCommande();		
+		this.addCommands();		
 		
 		
 		SQL.truncate("users");
@@ -156,16 +159,16 @@ public class Main extends JavaPlugin
 	/**
 	 * fonction utiliser au démarrage du plugin , elle vas instancier toute les commandes et les attribuer au bonnes classes(java et non caste)
 	 */
-	private void ajouteCommande(){
+	private void addCommands(){
 		
 		//la commande classes ou caste on verra affichera la liste des class disponible
-		getCommand("caste").setExecutor(new GereCommande());
+		getCommand("caste").setExecutor(new InfoCasteCommand());
 		
 		//commande pour listé les races
-		getCommand("race").setExecutor(new GereCommande());
+		getCommand("race").setExecutor(new InfoRaceCommand());
 		
 		//commande pour listé les races
-		getCommand("casteJoin").setExecutor(new CommandeCasteJoin());
+		getCommand("casteJoin").setExecutor(new JoinCasteCommand());
 		
 	}
 	

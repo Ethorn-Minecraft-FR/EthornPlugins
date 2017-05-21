@@ -1,4 +1,4 @@
-package fr.Ethorn.Cache;
+package fr.ethorn.cache;
 
 /**
  * Gère les données des joueurs, ce qui liera la race, le caste etc...

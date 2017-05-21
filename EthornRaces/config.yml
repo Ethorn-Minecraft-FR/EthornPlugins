@@ -2,7 +2,7 @@
 Race:
   unknown:
     id: 1
-    name: unknown
+    name: hidden-unknown
 
   ethnique:
     id: 2

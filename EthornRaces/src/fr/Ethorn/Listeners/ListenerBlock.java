@@ -1,4 +1,4 @@
-package fr.Ethorn.Listeners;
+package fr.ethorn.listeners;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
