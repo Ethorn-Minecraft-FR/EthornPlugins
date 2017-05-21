@@ -9,6 +9,7 @@ import fr.Ethorn.Listeners.ListenerBlock;
 import fr.Ethorn.Listeners.ListenerPlayer;
 import fr.Ethorn.Manager.EthnieManager;
 import fr.Ethorn.Manager.PlayerManager;
+import fr.Ethorn.commands.GereCommande;
 import net.md_5.bungee.api.ChatColor;
 
 /**
@@ -105,7 +106,9 @@ public class Main extends JavaPlugin
 		this.plugManager.registerEvents(this.listenerPlayer, this);
 		this.plugManager.registerEvents(this.listenerBlockBuild, this);
 		
-		
+		//commandes
+		//mettre toute les commandes dans cette méthodes
+		this.ajouteCommande();		
 		
 		SQL.truncate("users");
 	}
@@ -138,7 +141,18 @@ public class Main extends JavaPlugin
 		SQL.disconnect();
 	}
 
+	/**
+	 * fonction utiliser au démarrage du plugin , elle vas instancier toute les commandes et les attribuer au bonnes classes(java et non caste)
+	 */
+	private void ajouteCommande(){
+		
+		//la commande classes ou caste on verra affichera la liste des class disponible
+		getCommand("caste").setExecutor(new GereCommande());
+		
+		//commande pour listé les races
+		getCommand("race").setExecutor(new GereCommande());
+		
+	}
 	
 
 }
-
