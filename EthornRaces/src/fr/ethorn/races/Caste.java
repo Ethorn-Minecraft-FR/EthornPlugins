@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * Gère les castes des races
  * 
  * @author CIad
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class Caste 
 {
@@ -45,6 +45,11 @@ public class Caste
 	 * Nombre de point de bouclier
 	 */
 	private int shield;
+
+	/**
+	 * Description de la caste
+	 */
+	private String description;
 	
 	/**
 	 * Liste contenant les castes et la race
@@ -61,13 +66,14 @@ public class Caste
 	 * @param pSpeed
 	 * @param pShield
 	 */
-	public Caste(Race pRace, String pName, int pHealth, int pStrength, int pSpeed, int pShield)
+	public Caste(Race pRace, String pName, int pHealth, int pStrength, int pSpeed, int pShield, String pDescription)
 	{
 		this.name = pName;
 		this.health = pHealth;
 		this.strength = pStrength;
 		this.speed = pSpeed;
 		this.shield = pShield;
+		this.setDescription(pDescription);
 		
 		castes.add(this);
 		Main.raceCaste.put(this, pRace);
@@ -152,5 +158,13 @@ public class Caste
 
 	public void setRace(Race race) {
 		this.race = race;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

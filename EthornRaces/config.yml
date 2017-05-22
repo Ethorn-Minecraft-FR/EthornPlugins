@@ -2,7 +2,7 @@
 Race:
   unknown:
     id: 1
-    name: unknown
+    name: hidden-unknown
 
   ethnique:
     id: 2
@@ -15,6 +15,7 @@ Race:
         speed: 3
         shield: 3
         blocks-interdict: '75, 76, 93, 94, 149, 150, 152, 331, 356, 404'
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor congue dui. Nam posuere libero quis ornare condimentum. Aliquam aliquet mi vel nulla tincidunt interdum. Vestibulum porta mi in nunc finibus bibendum. Duis volutpat ipsum vel turpis duis."
 
       human:
         name: Humain
@@ -22,6 +23,7 @@ Race:
         strength: 1
         speed: 1
         shield: 0
+        
   pure:
     id: 3
     name: Purs

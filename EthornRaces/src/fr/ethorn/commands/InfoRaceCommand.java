@@ -16,7 +16,7 @@ public class InfoRaceCommand implements CommandExecutor {
 	 *  [race]
 	 *  
 	 *  @author Tardigradeus
-	 *  @verion 1.0.0
+	 *  @verion 1.0.1
 	 */	
 	@Override
 	public boolean onCommand(CommandSender sender , Command command, String msg, String[] args) {
@@ -33,10 +33,11 @@ public class InfoRaceCommand implements CommandExecutor {
 			//pour chaque élement dans la liste on fait un truc
 			Race.races.forEach( raceName -> {
 
-				//TODO : hidden-
-				//pour le coup on l'affiche au joueur ^^
-				sender.sendMessage(ChatColor.DARK_RED + "\t " + raceName.getName());
-
+				if(raceName.getName().indexOf("hidden-") != 0)
+				{
+					//pour le coup on l'affiche au joueur ^^
+					sender.sendMessage(ChatColor.DARK_RED + "\t " + raceName.getName());
+				}
 
 			});
 

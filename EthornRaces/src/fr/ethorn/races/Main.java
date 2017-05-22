@@ -21,7 +21,7 @@ import net.md_5.bungee.api.ChatColor;
  * Contiens la classe principale du plugin
  * 
  * @author CIad
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class Main extends JavaPlugin
 {
@@ -89,10 +89,13 @@ public class Main extends JavaPlugin
 	public PlayerDataManager dataManager;
 	
 	/**
-	 * hash map qui permet de savoir quel joueur a quel Caste
+	 * hashmap qui permet de savoir quel joueur a quel Caste
 	 */
 	public static HashMap<Player,Caste> playerCaste = new HashMap<>();
 	
+	/**
+	 * hashmap qui lie le caste à sa race
+	 */
 	public static HashMap<Caste, Race> raceCaste = new HashMap<>();
 	
 	

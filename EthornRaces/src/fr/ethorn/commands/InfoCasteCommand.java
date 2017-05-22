@@ -13,7 +13,7 @@ import net.md_5.bungee.api.ChatColor;
  * Gère la commands caste
  * 
  * @author Tardigradeus
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class InfoCasteCommand implements CommandExecutor 
 {
@@ -28,7 +28,7 @@ public class InfoCasteCommand implements CommandExecutor
 	 *  [Args:2] - Affiche une caste précise
 	 *  
 	 *  @author Tardigradeus
-	 *  @verion 1.0.0
+	 *  @verion 1.0.1
 	 */
 	@Override
 	public boolean onCommand(CommandSender sender , Command command, String msg, String[] args) 
@@ -62,10 +62,8 @@ public class InfoCasteCommand implements CommandExecutor
 						});
 					} else {
 						//Boucle pour afficher les info de la caste
-						//TODO Ajouter une description
-
 						Main.raceCaste.forEach((keyCaste, valueRace) -> {
-							if (keyCaste.equals(tmpRace) && keyCaste.getName().equals(args[1]))
+							if (valueRace.equals(tmpRace) && keyCaste.getName().equals(args[1]))
 							{
 								sender.sendMessage(ChatColor.GREEN + "\t" + valueRace.getName());
 								sender.sendMessage(ChatColor.GREEN + "\t" + keyCaste.getName());
@@ -73,6 +71,11 @@ public class InfoCasteCommand implements CommandExecutor
 								sender.sendMessage(ChatColor.BLUE + "Strength:\t" + keyCaste.getStrength());
 								sender.sendMessage(ChatColor.BLUE + "Speed:\t" + keyCaste.getSpeed());
 								sender.sendMessage(ChatColor.BLUE + "Shield:\t" + keyCaste.getShield());
+								sender.sendMessage(ChatColor.BLUE + "Description:\t");
+								sender.sendMessage(keyCaste.getDescription());
+
+								
+								
 								return;
 							}
 						});

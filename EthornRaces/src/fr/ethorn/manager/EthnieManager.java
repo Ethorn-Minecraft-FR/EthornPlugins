@@ -15,7 +15,7 @@ import net.md_5.bungee.api.ChatColor;
  * Gère les ethnies du serveur
  * 
  * @author CIad
- * @version 1.0.0
+ * @version 1.0.1
  */
 public class EthnieManager 
 {
@@ -36,7 +36,7 @@ public class EthnieManager
 	 * Découpe le fichier config du plugin
 	 * 
 	 * @author CIad
-	 * @version 1.0.0
+	 * @version 1.0.1
 	 * 
 	 */
 	private void raceConfig()
@@ -95,16 +95,24 @@ public class EthnieManager
 
 					Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "   - " + caste.getString("name") + " est ajoutés à la liste des classes de la race.");
 
+					String description = ChatColor.GOLD + "Aucune description.";
+					
+					if(caste.getString("description") != null)
+					{
+						description = caste.getString("description");
+						Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_AQUA + " --- " + description.length());
+					}
 					
 					try {
 						PreparedStatement pS = 
-								main.SQL.getConnection().prepareStatement("INSERT INTO castes(name, health, strength, speed, shield, fk_races_id) VALUES (?, ?, ?, ?, ?, ?)");
+								main.SQL.getConnection().prepareStatement("INSERT INTO castes(name, health, strength, speed, shield, description, fk_races_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
 						pS.setString(1, caste.getString("name"));
 						pS.setInt(2, caste.getInt("health"));
 						pS.setInt(3, caste.getInt("strength"));
 						pS.setInt(4, caste.getInt("speed"));
 						pS.setInt(5, caste.getInt("shield"));
-						pS.setInt(6, race.getInt("id"));
+						pS.setString(6, description);
+						pS.setInt(7, race.getInt("id"));
 						pS.execute();
 						pS.close();
 					} catch (SQLException e) {
@@ -114,9 +122,10 @@ public class EthnieManager
 					new Caste(objRace, 
 							caste.getString("name"),
 							caste.getInt("health"),
-							caste.getInt("Strength"),
-							caste.getInt("Speed"),
-							caste.getInt("Shield"));
+							caste.getInt("strength"),
+							caste.getInt("speed"),
+							caste.getInt("shield"),
+							description);
 					
 				}
 			}
