@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="EthornRaces/src"/>
-	<classpathentry kind="lib" path="EthornRaces/Librairy/spigot-1.11.2.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="EthornRaces/bin"/>
-</classpath>
