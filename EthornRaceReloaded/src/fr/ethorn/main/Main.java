@@ -7,6 +7,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
+    public static String plugName = "EthornRaces"; //Cotiens une constante ayant le nom du pluginn
+
+
     public PluginManager plugManager;
 
     /**
