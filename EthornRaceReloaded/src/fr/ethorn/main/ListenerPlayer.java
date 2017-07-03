@@ -44,11 +44,24 @@ public class ListenerPlayer implements Listener {
                 System.out.print("test 2 " + test.getMetaData().getColumnCount());
                 int enregister = test.getInt(1);
                 System.out.print("Enregistrer est egal a " +  enregister);
+                //todo opti here
+                if(enregister == 0){
+                    try {
+                        PreparedStatement pS2 = main.SQL.getConnection().prepareStatement("INSERT INTO `user` (`uuid`, `rang`) VALUES (?,?)");
+                        pS2.setString(1, uuid.toString());
+                        pS2.setString(2, "neophyte");
+                        pS2.execute();
+                        pS2.close();
+                    } catch (SQLException e3) {
+                        e3.printStackTrace();
+                    }
+                }else{
+                    //todo load data
+                }
             }
             pS.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-
     }
 }
