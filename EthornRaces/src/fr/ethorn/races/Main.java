@@ -1,5 +1,6 @@
 package fr.ethorn.races;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 
 import org.bukkit.Bukkit;
@@ -25,66 +26,41 @@ import net.md_5.bungee.api.ChatColor;
  */
 public class Main extends JavaPlugin
 {
-	public static String plugName = "EthornRaces"; //Contiens une constante ayant le nom du plugin
+	public static String plugName = "EthornRaces"; //Cotiens une constante ayant le nom du pluginn
 
 	/**
 	 * Contiens la class SQLConnection
-	 * 
-	 * @author CIad
-	 */
+	*/
 	public SQLConnection SQL; 
 	
 	/**
 	 * Contiens une déclaration de PluginManager
-	 * 
-	 * @author CIad
 	 */
 	public PluginManager plugManager;
-	
-	
-	
-	//Listener
-	
+
 	/**
 	 * Contiens la class ListenerPlayer
-	 * 
-	 * @author CIad
 	 */
 	public ListenerPlayer listenerPlayer;
 	
 	/**
 	 * Contiens la class ListenerBlockBuild
-	 * 
-	 * @author CIad
 	 */
 	public ListenerBlock listenerBlockBuild;
-	
-	
-	
-	
-	
-	//Manager
-	
+
 	/**
 	 * Contiens la class PlayerManager
-	 * 
-	 * @author CIad
 	 */
 	public PlayerManager playerManager;
 	
 	/**
 	 * Contiens la class EthnieManager
-	 * 
-	 * @author CIad
 	 */
 	public EthnieManager ethnieManager;	
-	
-	//DATA
-	
+
 	/**
 	 * Contiens la class PlayerDataManager
-	 * 
-	 * @author CIad
+
 	 */
 	public PlayerDataManager dataManager;
 	
@@ -102,8 +78,7 @@ public class Main extends JavaPlugin
 	/**
 	 * Contiens toutes les déclarations et initialisation des classes
 	 */
-	public void init()
-	{
+	public void init() throws SQLException {
 		this.plugManager = getServer().getPluginManager();
 		
 		//Manager
@@ -114,20 +89,15 @@ public class Main extends JavaPlugin
 		//Listener
 		this.listenerPlayer = new ListenerPlayer(this);
 		this.listenerBlockBuild = new ListenerBlock();
-		
-		
-		
+
 		//
 		this.plugManager.registerEvents(this.listenerPlayer, this);
 		this.plugManager.registerEvents(this.listenerBlockBuild, this);
-		
-		
-		
+
 		//commandes
 		//mettre toute les commandes dans cette méthodes
 		this.addCommands();		
-		
-		
+
 		SQL.truncate("users");
 	}
 	
@@ -145,10 +115,20 @@ public class Main extends JavaPlugin
 		Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "\n " + Main.plugName + " Races Activate");
 
 		//Connexion à la base de données
-		SQL = new SQLConnection("jdbc:mysql://", "localhost", "ethorn", "root", "");
-		SQL.connection();
-		
-		init();
+		try{
+			SQL = new SQLConnection("jdbc:mysql://", "minecraft107.omgserv.com", "ethorn", "minecraft_135086", "ROOT66");
+			SQL.connection();
+		}catch (ClassCastException e) {
+			e.printStackTrace();
+		}
+
+
+		try {
+			init();
+		} catch (SQLException e) {
+			System.out.print("Une erreur dans l'initialisation c'est produit.");
+			e.printStackTrace();
+		}
 
 
 	}
