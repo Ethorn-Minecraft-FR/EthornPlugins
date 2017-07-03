@@ -32,20 +32,20 @@ public class ListenerPlayer implements Listener {
     public void PlayerJoinEvent(PlayerJoinEvent e)
     {
         UUID uuid =  e.getPlayer().getUniqueId();
-        System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");
-
+        System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");Z
         try {
             PreparedStatement pS = main.SQL.getConnection().prepareStatement("SELECT COUNT(id) FROM user WHERE uuid = ?");
             pS.setString(1, uuid.toString());
             pS.execute();
             ResultSet test =  pS.getResultSet();
             if (test.next()){
-                System.out.print("test 1 " + test.getInt(1)); //id = 1 si cela existe
-                System.out.print("test 2 " + test.getMetaData().getColumnCount());
-                int enregister = test.getInt(1);
-                System.out.print("Enregistrer est egal a " +  enregister);
-                //todo opti here
-                if(enregister == 0){
+                int FirstConnection = test.getInt(1);
+
+                /**
+                 * Si l'utilsateur ce connecte pour la premiere fois alors l'on l'ajoute a la bdd.
+                 * Sinon On charge les données.
+                 */
+                if(FirstConnection == 0){
                     try {
                         PreparedStatement pS2 = main.SQL.getConnection().prepareStatement("INSERT INTO `user` (`uuid`, `rang`) VALUES (?,?)");
                         pS2.setString(1, uuid.toString());
@@ -56,7 +56,7 @@ public class ListenerPlayer implements Listener {
                         e3.printStackTrace();
                     }
                 }else{
-                    //todo load data
+                    //todo load dataplayer
                 }
             }
             pS.close();
