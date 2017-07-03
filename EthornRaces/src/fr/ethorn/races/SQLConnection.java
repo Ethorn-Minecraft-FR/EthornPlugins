@@ -75,30 +75,18 @@ public class SQLConnection {
 	}
 
 	/**
-	 * Gère les dump dans la base de données grâce à un tableau de String
-	 * 
-	 * @param pTable contiens les nom de tables à vider.
+	 * Truncate une table dans la bdd sql.
+	 * @param pTable est le nom de la table a supp de la bdd.
 	 */
-	public void truncate(String pTable)
-	{
-		Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + Main.plugName + " Vidange des tables de la base de données en cours..."); //Trace Console
+	public void truncate(String pTable) throws SQLException {
+		Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + Main.plugName + " Suppressions de la table "+ pTable +  " de la base de données en cours..."); //Trace Console
 
-		try {
-			String t = "TRUNCATE " + pTable;
-			PreparedStatement pS = this.getConnection().prepareStatement(t);
-			pS.execute();
-			pS.close();
+		String table = "TRUNCATE " + pTable;
+		PreparedStatement pS = this.getConnection().prepareStatement(table);
+		pS.execute();
+		pS.close();
+		Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + Main.plugName + " - " + pTable + " à été correctement vidée.");
 
-			Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + Main.plugName + " - " + pTable + " vidée."); //Trace Console
-
-			Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[EthornRace] Vidange terminée avec succès"); //Trace Console
-
-
-		} catch (SQLException e) {
-			Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + Main.plugName + " Vidange raté"); //Trace Console
-
-			e.printStackTrace();
-		}
 	}
 
 	/**
@@ -116,8 +104,7 @@ public class SQLConnection {
 
 				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "" + ChatColor.ITALIC + "[" + Main.plugName + "] : [UrlBase, " + this.urlBase + "]");
 				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "" + ChatColor.ITALIC + "[" + Main.plugName + "] : [Host, " + this.host + "]");
-				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "" + ChatColor.ITALIC + "[" + Main.plugName + "] : [Database, " + this.database + "]");	
-
+				Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "" + ChatColor.ITALIC + "[" + Main.plugName + "] : [Database, " + this.database + "]");
 				e.printStackTrace();
 			}
 		}
