@@ -1,0 +1,4 @@
+name: ClaimPlugin
+main: com.github.EthornPlugins.ClaimPlugin
+version: 1.0
+commands:
