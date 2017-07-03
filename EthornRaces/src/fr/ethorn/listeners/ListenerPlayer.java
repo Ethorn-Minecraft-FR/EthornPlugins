@@ -41,7 +41,7 @@ public class ListenerPlayer implements Listener
 	@EventHandler
 	public void PlayerJoinEvent(PlayerJoinEvent e)
 	{
-		Player player = e.getPlayer(); //Récupère le joueur qui se connecte
+		Player player = e.getPlayer();
 		
 		main.playerManager.createAccount(player);
 		main.dataManager.loadPlayerData(player);
