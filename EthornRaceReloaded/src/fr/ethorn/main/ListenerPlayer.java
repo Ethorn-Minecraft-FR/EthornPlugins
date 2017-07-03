@@ -32,7 +32,7 @@ public class ListenerPlayer implements Listener {
     public void PlayerJoinEvent(PlayerJoinEvent e)
     {
         UUID uuid =  e.getPlayer().getUniqueId();
-        System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");Z
+        System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");
         try {
             PreparedStatement pS = main.SQL.getConnection().prepareStatement("SELECT COUNT(id) FROM user WHERE uuid = ?");
             pS.setString(1, uuid.toString());
