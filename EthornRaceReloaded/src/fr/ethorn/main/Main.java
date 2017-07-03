@@ -1,14 +1,28 @@
 package fr.ethorn.main;
 
+import com.sun.webkit.plugin.PluginListener;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class Main extends JavaPlugin {
 
+    public PluginManager plugManager;
+
+    /**
+     * Contiens la class ListenerPlayer
+     */
+    public ListenerPlayer listenerPlayer;
+
     @Override
     public void onEnable()
     {
         System.out.print("[Ethorn]Le plugin de race démarre");
+        this.plugManager = getServer().getPluginManager();
+        this.listenerPlayer = new ListenerPlayer(this);
+        this.plugManager.registerEvents(this.listenerPlayer, this);
+
+
     }
 
     @Override
