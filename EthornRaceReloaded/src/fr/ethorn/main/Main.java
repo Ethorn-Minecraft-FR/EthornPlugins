@@ -1,12 +1,7 @@
 package fr.ethorn.main;
 
-import com.sun.webkit.plugin.PluginListener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 public class Main extends JavaPlugin {

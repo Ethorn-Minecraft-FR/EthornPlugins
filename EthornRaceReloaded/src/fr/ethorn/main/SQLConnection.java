@@ -1,11 +1,9 @@
 package fr.ethorn.main;
 
-import fr.ethorn.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
