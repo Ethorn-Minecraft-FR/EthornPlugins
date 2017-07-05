@@ -23,8 +23,8 @@ public class AddPlayerCommand implements CommandExecutor{
                             String rank = strings[3];
                             try {
                                 PreparedStatement pS4 = Main.instance.SQL.getConnection().prepareStatement("UPDATE `user` SET `id_classe`= ? WHERE (`playername`= ? )");
-                                pS4.setString(2, rank);
-                                pS4.setString(1, playerName);
+                                pS4.setString(1, rank);
+                                pS4.setString(2, playerName);
                                 pS4.execute();
                                 pS4.close();
                             } catch (SQLException e3) {
