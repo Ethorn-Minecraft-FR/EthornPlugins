@@ -36,6 +36,6 @@ public class AddPlayerCommand implements CommandExecutor{
                 }
             }
         }
-            return false;
+        return false;
     }
 }

@@ -38,10 +38,10 @@ public class ListenerPlayer implements Listener {
             ResultSet datalogin =  pS.getResultSet();
             if (datalogin.next()){
                 int FirstConnection = datalogin.getInt(1);
-                /**
-                 * Si l'utilsateur ce connecte pour la premiere fois alors l'on l'ajoute a la bdd.
-                 * Sinon On charge les données.
-                 */
+/**
+ * Si l'utilsateur ce connecte pour la premiere fois alors l'on l'ajoute a la bdd.
+ * Sinon On charge les données.
+ */
                 if(FirstConnection == 0){
                     try {
                         PreparedStatement pS2 = main.SQL.getConnection().prepareStatement("INSERT INTO `user` (`uuid`, `rang` , `playername`) VALUES (?,?,?)");
@@ -129,9 +129,9 @@ public class ListenerPlayer implements Listener {
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
                                 break;
-                             default:
-                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
-                                 break;
+                            default:
+                                System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
+                                break;
 
 
                         }
