@@ -43,9 +43,11 @@ public class ListenerPlayer implements Listener {
                  */
                 if(FirstConnection == 0){
                     try {
-                        PreparedStatement pS2 = main.SQL.getConnection().prepareStatement("INSERT INTO `user` (`uuid`, `rang`) VALUES (?,?)");
+                        PreparedStatement pS2 = main.SQL.getConnection().prepareStatement("INSERT INTO `user` (`uuid`, `rang` , `playername`) VALUES (?,?,?)");
                         pS2.setString(1, uuid.toString());
                         pS2.setString(2, "neophyte");
+                        pS2.setString(3, e.getPlayer().getName());
+
                         pS2.execute();
                         pS2.close();
                     } catch (SQLException e3) {
