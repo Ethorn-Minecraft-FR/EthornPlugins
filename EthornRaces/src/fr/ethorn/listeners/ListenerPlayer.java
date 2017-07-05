@@ -39,7 +39,7 @@ public class ListenerPlayer implements Listener
 	 * @param PlayerJointEvent e : Evenement d'écoute
 	 */
 	@EventHandler
-	public void PlayerJoinEvent(PlayerJoinEvent e)
+	public void playerJoinEvent(PlayerJoinEvent e)
 	{
 		Player player = e.getPlayer();
 		
@@ -52,7 +52,7 @@ public class ListenerPlayer implements Listener
 	 * @param PlayerQuitEvent e : Evenement d'écoute
 	 */
 	@EventHandler
-	public void PlayerQuitEvent(PlayerQuitEvent e)
+	public void playerQuitEvent(PlayerQuitEvent e)
 	{
 		Player player = e.getPlayer(); //récupère le joueur qui se déconnecte
 		

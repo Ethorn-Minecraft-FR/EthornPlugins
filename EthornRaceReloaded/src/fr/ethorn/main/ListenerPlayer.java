@@ -30,7 +30,7 @@ public class ListenerPlayer implements Listener {
 
 
     @EventHandler
-    public void PlayerJoinEvent(PlayerJoinEvent e)
+    public void playerJoinEvent(PlayerJoinEvent e)
     {
         UUID uuid =  e.getPlayer().getUniqueId();
         System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");
