@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
     public static String plugName = "EthornRaces"; //Cotiens une constante ayant le nom du pluginn
-
+    public static Main instance;
 
     public PluginManager plugManager;
 
@@ -25,11 +25,12 @@ public class Main extends JavaPlugin {
     public void onEnable()
     {
         System.out.print("[Ethorn]Le plugin de race démarre");
-
+        Main.instance = this;
 
         this.plugManager = getServer().getPluginManager();
         this.listenerPlayer = new ListenerPlayer(this);
         this.plugManager.registerEvents(this.listenerPlayer, this);
+        this.getCommand("ethorn").setExecutor(new AddPlayerCommand());
 
         try{
             SQL = new SQLConnection("jdbc:mysql://", "minecraft107.omgserv.com", "minecraft_135086", "minecraft_135086", "root66");
