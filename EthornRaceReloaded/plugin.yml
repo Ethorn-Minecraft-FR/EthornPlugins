@@ -5,3 +5,8 @@ description: Races manager
 author: Godartm
 
 main: fr.ethorn.main.Main
+
+commands:
+  ethorn:
+    description: Your description
+    usage: /ethorn
