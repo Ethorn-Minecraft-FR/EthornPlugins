@@ -1,5 +1,6 @@
 package fr.ethorn.main;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -127,8 +128,12 @@ public class ListenerPlayer implements Listener {
 
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
-
                                 break;
+                             default:
+                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
+                                 break;
+
+
                         }
 
                         ps3.close();
