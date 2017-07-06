@@ -1,3 +1,44 @@
 command /emenu:
   trigger:
+    open chest with 3 rows named "Liste des Races d'Ethorn" to the player
+    wait 0.1 seconds
+    format slot 1 of player with quartz named "Celeste" with lore "Choisi entre Séraphin ou Déchue" to run [make player execute command "celeste"]
+    format slot 2 of player with obsidian named "Maudite" with lore "Choisi entre Démon et Dragon" to run [make player execute command "maudite"]
+    format slot 3 of player with nether_star named "Pure" with lore "Choisi entre Elfe ou Fée" to run [make player execute command "pure"]
+    format slot 4 of player with golden_pickaxe named "Tellurique" with lore "Choisi entre Nain ou Gnome" to run [make player execute command "tellurique"]
+    format slot 5 of player with leather named "Ethnique" with lore "Choisi entre Humain ou Homme_bête" to run [make player execute command "ethnique"]
+
+command /celeste:
+  trigger:
     open chest with 3 rows to the player
+    wait 0.1 seconds
+    format slot 0 of player with quartz named "Séraphin" to run [make player execute command "ethorn player %player% add 2"]
+    format slot 1 of player with quartz named "Déchue" to run [make player execute command "ethorn player %player% add 3"]
+
+command /maudite:
+  trigger:
+    open chest with 1 rows to the player
+    wait 0.1 seconds
+    format slot 0 of player with quartz named "Démon" to run [make player execute command "ethorn player %player% add 4"]
+    format slot 1 of player with quartz named "Dragon" to run [make player execute command "ethorne player %player% add 5"]
+
+command /pure:
+  trigger:
+    open chest with 1 rows to the player
+    wait 0.1 seconds
+    format slot 0 of player with quartz named "Elfe" to run [make player execute command "ethorn player %player% add 6"]
+    format slot 1 of player with quartz named "Fée" to run [make player execute command "ethorn player %player% add 7"]
+
+command /tellurique:
+  trigger:
+    open chest with 1 rows to the player
+    wait 0.1 seconds
+    format slot 0 of player with quartz named "Nain" to run [make player execute command "ethorn player %player% add 8"]
+    format slot 1 of player with quartz named "Gnome" to run [make player execute command "ethorn player %player% add 9"]
+
+command /ethnique:
+  trigger:
+    open chest with 1 rows to the player
+    wait 0.1 seconds
+    format slot 0 of player with quartz named "Humain" to run [make player execute command "ethorn player %player% add 10"]
+    format slot 1 of player with quartz named "Homme-bête" to run  [make player execute command "ethorn player %player% add 11"]
