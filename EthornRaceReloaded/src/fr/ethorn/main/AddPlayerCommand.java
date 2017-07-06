@@ -23,9 +23,13 @@ public class AddPlayerCommand implements CommandExecutor{
                     pS4.setString(2, playerName);
                     pS4.execute();
                     pS4.close();
+                    return true;
                 } catch (SQLException e3) {
                     e3.printStackTrace();
                 }
+            }else{
+                System.out.print("erreur lors de la commande");
+                return false;
             }
         }
         return false;
