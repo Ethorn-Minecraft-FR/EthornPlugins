@@ -1,0 +1,3 @@
+command /emenu:
+  trigger:
+    open chest with 3 rows to the player
