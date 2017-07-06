@@ -80,6 +80,9 @@ public class ListenerPlayer implements Listener {
                          */
                         switch (dataload.getObject(1).toString()){
                             case "1":
+                                p.setHealthScale(20D);
+                                p.setMaxHealth(20D);
+                                p.sendMessage("Vous devez choisir un cast !");
                                 break;
                             case "2":
                                 p.setHealthScale(30);
