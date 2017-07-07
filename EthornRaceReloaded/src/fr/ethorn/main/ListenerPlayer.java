@@ -1,17 +1,15 @@
 package fr.ethorn.main;
 
-
-import org.bukkit.Statistic;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.UUID;
 
 public class ListenerPlayer implements Listener {
@@ -86,58 +84,71 @@ public class ListenerPlayer implements Listener {
                             case "1":
                                 p.setHealthScale(20D);
                                 p.setMaxHealth(20D);
+                                HmapMananger.AjoutHmap(uuid,1);
                                 p.sendMessage("Vous devez choisir un cast !");
-
                                 break;
                             case "2":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
+                                HmapMananger.AjoutHmap(uuid,2);
                                 break;
                             case "3":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
+                                HmapMananger.AjoutHmap(uuid,3);
                                 break;
                             case "4":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
+                                HmapMananger.AjoutHmap(uuid,4);
                                 break;
                             case "5":
                                 p.setHealthScale(40);
                                 p.setMaxHealth(40D);
+                                HmapMananger.AjoutHmap(uuid,5);
                                 break;
                             case "6":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D);
+                                HmapMananger.AjoutHmap(uuid,6);
                                 break;
                             case "7":
                                 p.setHealthScale(16);
                                 p.setMaxHealth(16D);
+                                HmapMananger.AjoutHmap(uuid,7);
                                 break;
                             case "8":
                                 p.setHealthScale(16D);
                                 p.setMaxHealth(16D );
+                                HmapMananger.AjoutHmap(uuid,8);
                                 break;
                             case "9":
-
                                 p.setHealthScale(12);
                                 p.setMaxHealth(12D);
+                                HmapMananger.AjoutHmap(uuid,9);
                                 break;
                             case "10":
+                                HmapMananger.AjoutHmap(uuid,10);
+
                                 break;
                             case "11":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
+                                HmapMananger.AjoutHmap(uuid,11);
                                 break;
                             case "12":
                                 p.setHealthScale(60);
                                 p.setMaxHealth(60D);
+                                HmapMananger.AjoutHmap(uuid,12);
                                 break;
                             case "13":
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
+                                HmapMananger.AjoutHmap(uuid,13);
                                 break;
                             default:
                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
+                                e.getPlayer().kickPlayer("Contact un admin sur le discord du serveur. Erreur (Not in database)");
                                 break;
                         }
                         ps3.close();
