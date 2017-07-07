@@ -1,9 +1,13 @@
 package fr.ethorn.main;
 
 
+import org.bukkit.Statistic;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -83,6 +87,7 @@ public class ListenerPlayer implements Listener {
                                 p.setHealthScale(20D);
                                 p.setMaxHealth(20D);
                                 p.sendMessage("Vous devez choisir un cast !");
+
                                 break;
                             case "2":
                                 p.setHealthScale(30);
@@ -128,18 +133,13 @@ public class ListenerPlayer implements Listener {
                                 p.setMaxHealth(60D);
                                 break;
                             case "13":
-                                //todo  p.setStatistic(Statistic.DAMAGE_DEALT,p.getStatistic(Statistic.DEATHS) + 2);
-
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
                                 break;
                             default:
                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
                                 break;
-
-
                         }
-
                         ps3.close();
                     } catch (SQLException e3) {
                         e3.printStackTrace();
@@ -151,4 +151,16 @@ public class ListenerPlayer implements Listener {
             e1.printStackTrace();
         }
     }
+
+    @EventHandler
+    public void EntityDamageEvent(EntityDamageByEntityEvent e){
+        if(e.getDamager().getType().equals(EntityType.PLAYER) ){
+            System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
+
+        }else if(e.getDamager().getType().isAlive() && !e.getDamager().getType().equals(EntityType.PLAYER)){
+            System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent");
+
+        }
+    }
 }
+
