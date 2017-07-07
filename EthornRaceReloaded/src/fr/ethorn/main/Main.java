@@ -3,8 +3,15 @@ package fr.ethorn.main;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
+
 
 public class Main extends JavaPlugin {
+
+    public static final Map<UUID, Integer> playerLink = new HashMap<>();
+
 
     public static String plugName = "EthornRaces"; //Cotiens une constante ayant le nom du pluginn
     public static Main instance;
