@@ -109,12 +109,13 @@ public class ListenerPlayer implements Listener {
                                 p.setMaxHealth(16D);
                                 break;
                             case "8":
-                                p.setHealthScale(12);
-                                p.setMaxHealth(12D);
+                                p.setHealthScale(16D);
+                                p.setMaxHealth(16D );
                                 break;
                             case "9":
-                                p.setHealthScale(26);
-                                p.setMaxHealth(26D );
+
+                                p.setHealthScale(12);
+                                p.setMaxHealth(12D);
                                 break;
                             case "10":
                                 break;
