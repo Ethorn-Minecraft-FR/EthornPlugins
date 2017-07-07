@@ -13,7 +13,7 @@ public class HmapMananger {
      *
      * Permet d'ajouter un joueur dans la hmap ce qui permet de faire un traitement de donnée par la suite.
      */
-    public static void AjoutHmap(UUID uuid,int cast){
+    public static void ajoutHmap(UUID uuid,int cast){
         Main.playerLink.put(uuid,cast);
     }
 
@@ -23,7 +23,7 @@ public class HmapMananger {
      * @return booleen true if value exist in hmap, false if value doesnt exist
      * Permet de savoir si la valeur est existante dans la hmap.
      */
-    public static void ValueExistHmap(UUID uuid,int cast){
+    public static void valueExistHmap(UUID uuid,int cast){
 
         Main.playerLink.remove(uuid,cast);
 

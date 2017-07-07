@@ -84,67 +84,67 @@ public class ListenerPlayer implements Listener {
                             case "1":
                                 p.setHealthScale(20D);
                                 p.setMaxHealth(20D);
-                                HmapMananger.AjoutHmap(uuid,1);
+                                HmapMananger.ajoutHmap(uuid,1);
                                 p.sendMessage("Vous devez choisir un cast !");
                                 break;
                             case "2":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
-                                HmapMananger.AjoutHmap(uuid,2);
+                                HmapMananger.ajoutHmap(uuid,2);
                                 break;
                             case "3":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
-                                HmapMananger.AjoutHmap(uuid,3);
+                                HmapMananger.ajoutHmap(uuid,3);
                                 break;
                             case "4":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
-                                HmapMananger.AjoutHmap(uuid,4);
+                                HmapMananger.ajoutHmap(uuid,4);
                                 break;
                             case "5":
                                 p.setHealthScale(40);
                                 p.setMaxHealth(40D);
-                                HmapMananger.AjoutHmap(uuid,5);
+                                HmapMananger.ajoutHmap(uuid,5);
                                 break;
                             case "6":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D);
-                                HmapMananger.AjoutHmap(uuid,6);
+                                HmapMananger.ajoutHmap(uuid,6);
                                 break;
                             case "7":
                                 p.setHealthScale(16);
                                 p.setMaxHealth(16D);
-                                HmapMananger.AjoutHmap(uuid,7);
+                                HmapMananger.ajoutHmap(uuid,7);
                                 break;
                             case "8":
                                 p.setHealthScale(16D);
                                 p.setMaxHealth(16D );
-                                HmapMananger.AjoutHmap(uuid,8);
+                                HmapMananger.ajoutHmap(uuid,8);
                                 break;
                             case "9":
                                 p.setHealthScale(12);
                                 p.setMaxHealth(12D);
-                                HmapMananger.AjoutHmap(uuid,9);
+                                HmapMananger.ajoutHmap(uuid,9);
                                 break;
                             case "10":
-                                HmapMananger.AjoutHmap(uuid,10);
+                                HmapMananger.ajoutHmap(uuid,10);
 
                                 break;
                             case "11":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
-                                HmapMananger.AjoutHmap(uuid,11);
+                                HmapMananger.ajoutHmap(uuid,11);
                                 break;
                             case "12":
                                 p.setHealthScale(60);
                                 p.setMaxHealth(60D);
-                                HmapMananger.AjoutHmap(uuid,12);
+                                HmapMananger.ajoutHmap(uuid,12);
                                 break;
                             case "13":
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
-                                HmapMananger.AjoutHmap(uuid,13);
+                                HmapMananger.ajoutHmap(uuid,13);
                                 break;
                             default:
                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
@@ -167,6 +167,7 @@ public class ListenerPlayer implements Listener {
     public void EntityDamageEvent(EntityDamageByEntityEvent e){
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
             System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
+            e.getDamager().getUniqueId();
 
         }else if(e.getDamager().getType().isAlive() && !e.getDamager().getType().equals(EntityType.PLAYER)){
             System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent");
