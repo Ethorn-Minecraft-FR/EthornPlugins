@@ -67,21 +67,21 @@ public class ListenerPlayer implements Listener {
                         dataload.next();
 
                         Player p = e.getPlayer();
-                        /**
-                         * 1 = neophyte.
-                         * 2 = celeste --> séraphin
-                         * 3 = celeste --> déchu
-                         * 4 = maudite --> demon
-                         * 5 = maudite --> dragon
-                         * 6 = pure --> elfe
-                         * 7 = pure -->  fée
-                         * 8 = Tellurique --> Nain
-                         * 9 = Tellurique --> Gnome
-                         * 10 = Ethnique --> Humain
-                         * 11 = Ethnique --> Homme-bête
-                         * 12 = Divine -->  dieu unique
-                         * 13 = Divine --> dieu antique
-                         */
+/**
+ * 1 = neophyte.
+ * 2 = celeste --> séraphin
+ * 3 = celeste --> déchu
+ * 4 = maudite --> demon
+ * 5 = maudite --> dragon
+ * 6 = pure --> elfe
+ * 7 = pure -->  fée
+ * 8 = Tellurique --> Nain
+ * 9 = Tellurique --> Gnome
+ * 10 = Ethnique --> Humain
+ * 11 = Ethnique --> Homme-bête
+ * 12 = Divine -->  dieu unique
+ * 13 = Divine --> dieu antique
+ */
                         switch (dataload.getObject(1).toString()){
                             case "1":
                                 p.setHealthScale(20D);
@@ -165,26 +165,42 @@ public class ListenerPlayer implements Listener {
         }
     }
     private void entityDamageEvent(EntityDamageByEntityEvent e){
+
+/**
+ * L'on récupère les entité
+ */
+        final Entity damaged = e.getEntity();
+        int defense = 0;
+
+
+        if(damaged instanceof Player){
+            UUID damagedUuid = damaged.getUniqueId();
+            Integer data2 = Main.playerLink.get(damagedUuid);
+            System.out.print("[Ethorn]Le nom de la personne qui c'est fait taper est :" + damaged.getName());
+            defense = DefensiveStatisticManager.getDefenseStats(data2);
+        }
+
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
             System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
             Player player = (Player) e.getDamager();
-            UUID uuid = e.getDamager().getUniqueId();
-            Integer data = Main.playerLink.get(uuid);
-            /**
-            * 1 = neophyte.
-            * 2 = celeste --> séraphin
-            * 3 = celeste --> déchu
-            * 4 = maudite --> demon
-            * 5 = maudite --> dragon
-            * 6 = pure --> elfe
-            * 7 = pure -->  fée
-            * 8 = Tellurique --> Nain
-            * 9 = Tellurique --> Gnome
-            * 10 = Ethnique --> Humain
-            * 11 = Ethnique --> Homme-bête
-            * 12 = Divine -->  dieu unique
-            * 13 = Divine --> dieu antique
-            */
+            UUID DamagerUuid = e.getDamager().getUniqueId();
+            Integer data = Main.playerLink.get(DamagerUuid);
+
+/**
+ * 1 = neophyte.
+ * 2 = celeste --> séraphin
+ * 3 = celeste --> déchu
+ * 4 = maudite --> demon
+ * 5 = maudite --> dragon
+ * 6 = pure --> elfe
+ * 7 = pure -->  fée
+ * 8 = Tellurique --> Nain
+ * 9 = Tellurique --> Gnome
+ * 10 = Ethnique --> Humain
+ * 11 = Ethnique --> Homme-bête
+ * 12 = Divine -->  dieu unique
+ * 13 = Divine --> dieu antique
+ */
             switch (data){
                 case 1:
                     System.out.print("damage : " +e.getDamage());
@@ -192,109 +208,126 @@ public class ListenerPlayer implements Listener {
                 case 2:
                     if (e.getDamager() instanceof Arrow)
                     {
-
                         e.setDamage(e.getDamage() + 1);
+                        e.setDamage(e.getDamage() - defense);
                     }
                     e.setDamage(e.getDamage() + 1);
+                    e.setDamage(e.getDamage() - defense);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 3:
                     if (e.getDamager() instanceof Arrow)
                     {
-
                         e.setDamage(e.getDamage() + 1.5);
+                        e.setDamage(e.getDamage() - defense);
                     }
                     e.setDamage(e.getDamage() + 1.5);
+                    e.setDamage(e.getDamage() - defense);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 4:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 3);
                     }
                     e.setDamage(e.getDamage() + 3);
+                    e.setDamage(e.getDamage() - defense);
+
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 5:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 4);
                     }
                     e.setDamage(e.getDamage() + 4);
+                    e.setDamage(e.getDamage() - defense);
+
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 6:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
+                    e.setDamage(e.getDamage() - defense);
+
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 7:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 1);
                     }
+                    e.setDamage(e.getDamage() - defense);
                     e.setDamage(e.getDamage() + 1);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 8:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 3);
                     }
                     e.setDamage(e.getDamage() + 3);
+                    e.setDamage(e.getDamage() - defense);
+
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 9:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 2);
                     }
                     e.setDamage(e.getDamage() + 2);
+                    e.setDamage(e.getDamage() - defense);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 10:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 1);
                     }
+                    e.setDamage(e.getDamage() - defense);
                     e.setDamage(e.getDamage() + 1);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 11:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 4);
                     }
                     e.setDamage(e.getDamage() + 4);
+                    e.setDamage(e.getDamage() - defense);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 12:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
+                    e.setDamage(e.getDamage() - defense);
                     System.out.print("damage : " +e.getDamage());
                     break;
                 case 13:
                     if (e.getDamager() instanceof Arrow)
                     {
-
+                        e.setDamage(e.getDamage() - defense);
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
+                    e.setDamage(e.getDamage() - defense);
+
                     System.out.print("damage : " +e.getDamage());
                     break;
                 default:
@@ -307,15 +340,7 @@ public class ListenerPlayer implements Listener {
         }
     }
 
-    @EventHandler
-    public final void onEntityDamageByEntity(EntityDamageByEntityEvent e2)
-    {
-        final Entity damager = e2.getDamager();
-        final Entity damaged = e2.getEntity();
 
-        System.out.print("La personne qui tape est " + damager + "La personne qui ce fait frapper est " + damaged);
-        entityDamageEvent(e2);
-    }
     @EventHandler
     public void playerLeaveEvent(PlayerQuitEvent e){
         UUID uuid = e.getPlayer().getUniqueId();
