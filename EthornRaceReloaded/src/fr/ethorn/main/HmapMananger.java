@@ -23,7 +23,13 @@ public class HmapMananger {
      * @return booleen true if value exist in hmap, false if value doesnt exist
      * Permet de savoir si la valeur est existante dans la hmap.
      */
-    public static void valueExistHmap(UUID uuid,int cast){
+    public static boolean valueExistHmap(UUID uuid,int cast){
+
+       //todo
+        return true;
+    }
+
+    public static void valueRemoveHmap(UUID uuid,int cast){
 
         Main.playerLink.remove(uuid,cast);
 
