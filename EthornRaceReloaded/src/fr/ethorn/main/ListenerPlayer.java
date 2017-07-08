@@ -1,5 +1,6 @@
 package fr.ethorn.main;
 
+import org.bukkit.entity.Arrow;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -169,33 +170,132 @@ public class ListenerPlayer implements Listener {
             Player player = (Player) e.getEntity();
             UUID uuid = e.getDamager().getUniqueId();
             Integer data = Main.playerLink.get(uuid);
-
+            /**
+            * 1 = neophyte.
+            * 2 = celeste --> séraphin
+            * 3 = celeste --> déchu
+            * 4 = maudite --> demon
+            * 5 = maudite --> dragon
+            * 6 = pure --> elfe
+            * 7 = pure -->  fée
+            * 8 = Tellurique --> Nain
+            * 9 = Tellurique --> Gnome
+            * 10 = Ethnique --> Humain
+            * 11 = Ethnique --> Homme-bête
+            * 12 = Divine -->  dieu unique
+            * 13 = Divine --> dieu antique
+            */
             switch (data){
                 case 1:
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 2:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 3:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1.5);
+                    }
+                    e.setDamage(e.getDamage() + 1.5);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 4:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 3);
+                    }
+                    e.setDamage(e.getDamage() + 3);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 5:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 4);
+                    }
+                    e.setDamage(e.getDamage() + 4);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 6:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 7:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 8:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 3);
+                    }
+                    e.setDamage(e.getDamage() + 3);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 9:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 2);
+                    }
+                    e.setDamage(e.getDamage() + 2);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 10:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 11:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 4);
+                    }
+                    e.setDamage(e.getDamage() + 4);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 12:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 case 13:
+                    if (e.getDamager() instanceof Arrow)
+                    {
+                        Arrow arrow = (Arrow) e.getDamager();
+                        e.setDamage(e.getDamage() + 1);
+                    }
+                    e.setDamage(e.getDamage() + 1);
+                    System.out.print("damage : " +e.getDamage());
                     break;
                 default:
                     player.kickPlayer("Merci de contacter un dev erreur (data value default)");
