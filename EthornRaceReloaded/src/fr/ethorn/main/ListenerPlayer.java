@@ -192,7 +192,7 @@ public class ListenerPlayer implements Listener {
                 case 2:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
@@ -201,7 +201,7 @@ public class ListenerPlayer implements Listener {
                 case 3:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1.5);
                     }
                     e.setDamage(e.getDamage() + 1.5);
@@ -210,7 +210,7 @@ public class ListenerPlayer implements Listener {
                 case 4:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 3);
                     }
                     e.setDamage(e.getDamage() + 3);
@@ -219,7 +219,7 @@ public class ListenerPlayer implements Listener {
                 case 5:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 4);
                     }
                     e.setDamage(e.getDamage() + 4);
@@ -228,7 +228,7 @@ public class ListenerPlayer implements Listener {
                 case 6:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
@@ -237,7 +237,7 @@ public class ListenerPlayer implements Listener {
                 case 7:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
@@ -246,7 +246,7 @@ public class ListenerPlayer implements Listener {
                 case 8:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 3);
                     }
                     e.setDamage(e.getDamage() + 3);
@@ -255,7 +255,7 @@ public class ListenerPlayer implements Listener {
                 case 9:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 2);
                     }
                     e.setDamage(e.getDamage() + 2);
@@ -264,7 +264,7 @@ public class ListenerPlayer implements Listener {
                 case 10:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
@@ -273,7 +273,7 @@ public class ListenerPlayer implements Listener {
                 case 11:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 4);
                     }
                     e.setDamage(e.getDamage() + 4);
@@ -282,7 +282,7 @@ public class ListenerPlayer implements Listener {
                 case 12:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
@@ -291,7 +291,7 @@ public class ListenerPlayer implements Listener {
                 case 13:
                     if (e.getDamager() instanceof Arrow)
                     {
-                        Arrow arrow = (Arrow) e.getDamager();
+
                         e.setDamage(e.getDamage() + 1);
                     }
                     e.setDamage(e.getDamage() + 1);
