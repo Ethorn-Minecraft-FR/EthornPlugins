@@ -6,10 +6,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.util.UUID;
 
 public class ListenerPlayer implements Listener {
@@ -27,9 +27,9 @@ public class ListenerPlayer implements Listener {
         this.main = main;
     }
 
-
     @EventHandler
     public void playerJoinEvent(PlayerJoinEvent e)
+
     {
         UUID uuid =  e.getPlayer().getUniqueId();
         System.out.print("[Ethorn-dev] Le joueur " + e.getPlayer().getName() + " avec pour uuid  "+ uuid + " a rejoint le serveur");
@@ -162,16 +162,48 @@ public class ListenerPlayer implements Listener {
             e1.printStackTrace();
         }
     }
-
     @EventHandler
-    public void EntityDamageEvent(EntityDamageByEntityEvent e){
+    public void entityDamageEvent(EntityDamageByEntityEvent e){
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
             System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
-            e.getDamager().getUniqueId();
+            Player player = (Player) e.getEntity();
+            UUID uuid = e.getDamager().getUniqueId();
+            Integer data = Main.playerLink.get(uuid);
+
+            switch (data){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                default:
+                    player.kickPlayer("Merci de contacter un dev erreur (data value default)");
+                    break;
+            }
 
         }else if(e.getDamager().getType().isAlive() && !e.getDamager().getType().equals(EntityType.PLAYER)){
             System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent");
-
         }
     }
 
