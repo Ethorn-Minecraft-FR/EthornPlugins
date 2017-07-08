@@ -174,5 +174,12 @@ public class ListenerPlayer implements Listener {
 
         }
     }
+
+    @EventHandler
+    public void playerLeaveEvent(PlayerQuitEvent e){
+        UUID uuid = e.getPlayer().getUniqueId();
+        Integer data = Main.playerLink.get(uuid);
+        HmapMananger.valueRemoveHmap(uuid,data);
+    }
 }
 
