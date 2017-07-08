@@ -1,6 +1,7 @@
 package fr.ethorn.main;
 
 import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -163,8 +164,7 @@ public class ListenerPlayer implements Listener {
             e1.printStackTrace();
         }
     }
-    @EventHandler
-    public void entityDamageEvent(EntityDamageByEntityEvent e){
+    private void entityDamageEvent(EntityDamageByEntityEvent e){
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
             System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
             Player player = (Player) e.getDamager();
@@ -307,6 +307,15 @@ public class ListenerPlayer implements Listener {
         }
     }
 
+    @EventHandler
+    public final void onEntityDamageByEntity(EntityDamageByEntityEvent e2)
+    {
+        final Entity damager = e2.getDamager();
+        final Entity damaged = e2.getEntity();
+
+        System.out.print("La personne qui tape est " + damager + "La personne qui ce fait frapper est " + damaged);
+        entityDamageEvent(e2);
+    }
     @EventHandler
     public void playerLeaveEvent(PlayerQuitEvent e){
         UUID uuid = e.getPlayer().getUniqueId();
