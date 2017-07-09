@@ -105,4 +105,10 @@ public class StatisticManager {
 
         return Damagevalue;
     }
+
+    public static int getSpeedStats(int castId){
+      int speed = 0;
+
+      return speed;
+    }
 }
