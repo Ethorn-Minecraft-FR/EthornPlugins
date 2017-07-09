@@ -1,0 +1,176 @@
+#╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶
+
+#╔════════════════════════════════════╗
+#║Commande en rapport avec les races  ║
+#╚════════════════════════════════════╝
+
+#╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶╶
+
+#Création de la commande qui ouvre le menu des races
+
+#───────────────────────────────────────────────
+
+command /emenu:
+  trigger:
+    open chest with 3 rows named "       &4&nListe des Races d'Ethorn" to the player
+    wait 0.1 seconds
+    format slot 2 of player with quartz named "                       &fRace : &3&lCeleste  &fCaste : &3&lSéraphin" with lore "&r&a                                  Le célestis posséde:||&f&l-&r un double saut||&f&l-&r l'éfficacité des outils en or est doublé||&f&l-&r la protection des armures en or est doublé||&f&l-&r les dégats causé par les armes en or sont doublé||&f&l-&R Ne peut pas faire de redstone||&f&l-&R Possède des elytras incassable||&f&l-&R Peut manger tout type de nourriture cela lui rapporte 4gigot||&r&a                                  Le Séraphin posséde:||&f&l&r- 15 coeurs de vie||&f&l-&r&c +1 de force||&f&l-&r&c +1 de résistance||&f&l-&r&c +2 de vitesse " to run [make player execute command "celsera"]
+    format slot 4 of player with blaze_powder  named "                      &fRace : &8&lMaudite  &fCaste : &8&lDémons" with lore "&r&6                           Le Damné possède:||&f&l-&r Une résistance au feu||&f&l-&r Une faiblesse a l'eau||&f&l-&r Ne peut pas utiliser de redstone||&r&6                           Le démon possède:||&f&l-&R 15coeurs de vie||&f&l-&RUne préférence à la viande crue et putréfié||&f&l-&R les autres types de nourritures lui confèrent un malus||&f&l-&R&c +1 de vitesse||&f&l-&R&c +3 de force||&f&l-&R&c +3 de résistance" to run [make player execute command "maudem"]
+    format slot 23 of player with peony named "                           &fRace : &a&lPure" with lore "&r&d                       Le Pur possède:||&f&l-&r Une préférence à la nourriture végétable||&f&l-&r Un malus pour la viande||&f&l-&r Une baguette magique comme arme||&f&l-&r Un effet de night Vision infini||&f&l-&r Une armure en cuire qui double sa protection||&f&l-&r Il ne peut pas utiliser de redstone" to run [make player execute command "pure"]
+    format slot 21 of player with gold_ingot named "                       &fRace : &6&lTellurique" with lore "&r&8            Le Tellurien possède:||&f&l-&r Une armure en maille qui double sa protection||&f&l-&r Il peut manger tout type de nourriture" to run [make player execute command "tellurique"]
+    format slot 6 of player with leather named "                                        &fRace : &5&lEthnique" with lore "                                   &r&eL'éthnien possède:||&f&l-&r Il recoit 5 pourcents des transactions commerciales||&f&l-&r Il ne peut pas faire de la redstone||                                     &r&eL'humain possède:||&f&l-&rLes coeurs par default||&f&l-&r Il peut manger tout type de nourritures||&f&l-&r Les loots de pêche,d'agriculture et d'élevage sont doublés||&f&l-&r&c +1 de résistance||&f&l-&r&c +1 de force||&f&l-&r&c +1 de vitesse" to run [make player execute command "ethhum"]
+
+#───────────────────────────────────────────────
+
+#Commande pour les races avex deux choix
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Races : Pure
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+command /pure:
+  trigger:
+    open chest with 3 rows to the player
+    wait 0.1 seconds
+    format slot 11 of player with bow named "&fCaste : &a&lElfe" with lore "&dL'elfe possède:||&f&l-&r 13 coeurs de vie||&f&l-&r Un gain d'xp doublé||&f&l-&r&c +1 de force ||&f&l-&r&c +2 de résistance ||&f&l-&r&c +2 de vitesse" to run [make player execute command "purelf"]
+    format slot 15 of player with stick named "&fCaste : &a&lFée" with lore "&dLa fée possède:||&f&l-&r 8 coeurs de vie||&f&l-&r Un gain d'xp quadruplé||&f&l-&r Des elytras incassable||&f&l-&r&c +1 de résistance||&f&l-&r&c +1 de force||&f&l-&r&c +3 de vitesse" to run [make player execute command "purfee"]
+    format slot 26 of player with barrier named "&4&lRETOUR" to run [make player execute command "emenu"]
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+# Races : Téllurique
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+command /tellurique:
+  trigger:
+    open chest with 3 rows to the player
+    wait 0.1 seconds
+    format slot 11 of player with iron_ingot named "                 &fCaste : &6&lNain" with lore "              &r&8Le Nain possède:||&f&l-&r 8 coeurs de vie||&f&l-&r Un effet d'haste II||&f&l-&r Les gains de minages sont doublé||&f&l-&r&c +4 de résistance||&f&l-&r&c +3 de force||&f&l-&r&c -0.25 de vitesse" to run [make player execute command "tellnain"]
+    format slot 15 of player with redstone named "                 &fCaste : &6&lGnôme" with lore "              &r&8Le Gnôme possède:||&f&l-&r 6coeurs de vie||&f&l-&r Un accès à des craft spéciaux||&f&l-&r Les gains de redstone sont doublé||&f&l-&r Peuvent utiliser la redstone||&f&l-&r&c +3 de résistance||&f&l-&r&c +2 de force||&f&l-&r&c +0.5 de vitesse" to run [make player execute command "tellgnome"]
+    format slot 26 of player with barrier named "&4&lRETOUR" to run [make player execute command "emenu"]
+
+#───────────────────────────────────────────────
+
+#Commande pour chaque caste
+
+#///////////////////////////////////////////////
+
+# Caste : Nain
+
+#///////////////////////////////////////////////
+command /tellnain:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 8"
+      make console execute command "pex user %player% group add HomineTellurien"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&6&lFélicitation tu es désormais un Nain!"
+    else:
+      message "&6&l Tu appartient déjà à une caste !"
+
+#///////////////////////////////////////////////
+
+# Caste : Gnôme
+
+#///////////////////////////////////////////////
+
+command /tellgnome:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 9"
+      make console execute command "pex user %player% group add HomineTellurien"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&6&l Félicitation tu es désormais un Gnôme"
+    else:
+      message "&6&l Tu appartient déjà à une caste !"
+
+#///////////////////////////////////////////////
+
+# Caste : Humain
+
+#///////////////////////////////////////////////
+
+command /ethhum:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 10"
+      make console execute command "pex user %player% group add HomineEthnien"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&5&l Félicitation tu es désormain Un humain"
+    else:
+      message "&5&l Tu appartient déjà à une caste !"
+
+#///////////////////////////////////////////////
+
+# Caste : Séraphin
+
+#///////////////////////////////////////////////
+
+command /celsera:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 2 "
+      make console execute command "pex user %player% group add HomineCélestis"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&3&l Félicitation tu es désormais un Séraphin"
+    else:
+      message "&3&l Tu appartient déjà à une caste !"
+
+#///////////////////////////////////////////////
+
+# Caste : Démons
+
+#///////////////////////////////////////////////
+
+command /maudem:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 4"
+      make console execute command "pex user %player% group add HomineDamné"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&8&l Félicitation tu es désormais un Démons"
+    else:
+      message "&8&l Tu appartient déjà à une caste ! "
+
+#///////////////////////////////////////////////
+
+# Caste : Elfe
+
+#///////////////////////////////////////////////
+
+command /purelf:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ehtorn player %player% add 6"
+      make console execute command "pex user %player% group add HominePur "
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&a&l Féliciation tu es désormais un Elfe !"
+    else:
+      message "&a&l Tu appartient déjà à une caste !"
+
+#///////////////////////////////////////////////
+
+# Caste : Fée
+
+#///////////////////////////////////////////////
+
+command /purfee:
+  trigger:
+    if player has permission "neograde":
+      make player execute command "ethorn player %player% add 7 "
+      make console execute command "pex user %player% group add HominePur"
+      make console execute command "pex user %player% group remove Néophytes"
+      message "&a&l Féliciation tu es désormais une Féé !"
+    else:
+      message "&a&l Tu appartient déjà à une caste !"
+
+
+
+
+
+On first join:
+  if {genre.player} is not set:
+    make player execute command "genre"
