@@ -3,7 +3,7 @@ package fr.ethorn.main;
 /**
  * Created by marin on 08/07/2017.
  */
-public class DefensiveStatisticManager {
+public class StatisticManager {
 
     public static int getDefenseStats(int castId){
         int defensevalue = 0;

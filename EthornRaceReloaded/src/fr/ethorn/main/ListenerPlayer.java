@@ -177,7 +177,7 @@ public class ListenerPlayer implements Listener {
             UUID damagedUuid = damaged.getUniqueId();
             Integer data2 = Main.playerLink.get(damagedUuid);
             System.out.print("[Ethorn]Le nom de la personne qui c'est fait taper est :" + damaged.getName());
-            defense = DefensiveStatisticManager.getDefenseStats(data2);
+            defense = StatisticManager.getDefenseStats(data2);
         }
 
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
