@@ -209,6 +209,15 @@ public class ListenerPlayer implements Listener {
 
         }else if(e.getDamager().getType().isAlive() && !e.getDamager().getType().equals(EntityType.PLAYER)){
             System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent");
+            if(damaged instanceof Player){
+                double degatEntite = e.getDamage();
+                if(degatEntite - defense <= 0){
+                    degatEntite = 0;
+                }else{
+                    degatEntite = degatEntite - defense;
+                }
+                e.setDamage(degatEntite);
+            }
         }
     }
 
