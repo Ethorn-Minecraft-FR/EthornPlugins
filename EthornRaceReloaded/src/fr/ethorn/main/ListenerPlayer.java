@@ -170,7 +170,7 @@ public class ListenerPlayer implements Listener {
  * L'on récupère les entité
  */
         final Entity damaged = e.getEntity();
-        int defense = 0;
+        double defense = 0;
 
 /**
  * process qui vérifie que la personne qui ce fait taper est un joueur est lui calcul la def.

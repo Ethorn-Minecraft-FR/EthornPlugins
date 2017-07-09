@@ -1,48 +1,45 @@
 package fr.ethorn.main;
 
-import org.bukkit.entity.Entity;
 
-/**
- * Created by marin on 08/07/2017.
- */
+
 public class StatisticManager {
 
-    public static int getDefenseStats(int castId){
-        int defensevalue = 0;
+    public static double getDefenseStats(int castId){
+        double defensevalue = 0;
 
         switch (castId) {
             case 1:
                 defensevalue = 0;
                 break;
             case 2:
-                defensevalue = 0;
+                defensevalue = 1;
                 break;
             case 3:
-                defensevalue = 0;
+                defensevalue = 1.5;
                 break;
             case 4:
-                defensevalue = 0;
+                defensevalue = 3;
                 break;
             case 5:
-                defensevalue = 0;
+                defensevalue = 4;
                 break;
             case 6:
-                defensevalue = 0;
+                defensevalue = 2;
                 break;
             case 7:
-                defensevalue = 0;
+                defensevalue = 1;
                 break;
             case 8:
-                defensevalue = 0;
+                defensevalue = 4;
                 break;
             case 9:
-                defensevalue = 0;
+                defensevalue = 3;
                 break;
             case 10:
-                defensevalue = 0;
+                defensevalue = 1;
                 break;
             case 11:
-                defensevalue = 0;
+                defensevalue = 3;
                 break;
             case 12:
                 defensevalue = 0;
