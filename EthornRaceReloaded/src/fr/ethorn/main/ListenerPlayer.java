@@ -189,11 +189,8 @@ public class ListenerPlayer implements Listener {
         if(e.getDamager().getType().equals(EntityType.PLAYER) ){
             System.out.println("[Ethorn] Le joueur " + e.getDamager().getName() + "a call EntityDamageEvent");
             UUID DamagerUuid = e.getDamager().getUniqueId();
-            System.out.print("uuid = " + DamagerUuid);
             Integer data = Main.playerLink.get(DamagerUuid);
-            System.out.print(data + "test 123");
             double degat = StatisticManager.getDamageStats(data);
-            System.out.print(degat + "test 456");
 
             double degatJoueur;
             degatJoueur = e.getDamage() + degat;
