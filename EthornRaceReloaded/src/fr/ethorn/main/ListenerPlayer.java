@@ -1,5 +1,6 @@
 package fr.ethorn.main;
 
+import org.bukkit.Statistic;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -177,10 +178,13 @@ public class ListenerPlayer implements Listener {
  * process qui vérifie que la personne qui ce fait taper est un joueur est lui calcul la def.
  */
         if(damaged instanceof Player){
+
             UUID damagedUuid = damaged.getUniqueId();
             Integer data2 = Main.playerLink.get(damagedUuid);
+            Player player = (Player) damaged;
+            boolean stuff = StatisticManager.returnStuffEquiped(data2,player);
             System.out.print("[Ethorn]Le nom de la personne qui c'est fait taper est :" + damaged.getName());
-            defense = StatisticManager.getDefenseStats(data2);
+            defense = StatisticManager.getDefenseStats(data2,stuff);
         }
 
 /**
@@ -209,7 +213,6 @@ public class ListenerPlayer implements Listener {
             }
 
         }else if(e.getDamager().getType().isAlive() && !e.getDamager().getType().equals(EntityType.PLAYER)){
-            System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent");
             if(damaged instanceof Player){
                 double degatEntite = e.getDamage();
                 if(degatEntite - defense <= 0){
@@ -218,9 +221,12 @@ public class ListenerPlayer implements Listener {
                     degatEntite = degatEntite - defense;
                 }
                 e.setDamage(degatEntite);
+                System.out.println("[Ethorn] L'entité " + e.getDamager().getName() + "a call le elseif EntityDamageEvent et causera "+ degatEntite + "degats");
+
             }
         }
     }
+
 
 
     @EventHandler
