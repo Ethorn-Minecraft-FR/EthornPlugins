@@ -89,54 +89,67 @@ public class ListenerPlayer implements Listener {
                                 p.setMaxHealth(20D);
                                 HmapMananger.ajoutHmap(uuid,1);
                                 p.sendMessage("Vous devez choisir un cast !");
+                                p.setWalkSpeed(0.2F);
                                 break;
                             case "2":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
+                                p.setWalkSpeed(0.6F);
+
                                 HmapMananger.ajoutHmap(uuid,2);
+
                                 break;
                             case "3":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
+                                p.setWalkSpeed(0.7F);
                                 HmapMananger.ajoutHmap(uuid,3);
                                 break;
                             case "4":
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
+                                p.setWalkSpeed(0.4F);
                                 HmapMananger.ajoutHmap(uuid,4);
                                 break;
                             case "5":
                                 p.setHealthScale(40);
                                 p.setMaxHealth(40D);
+                                p.setWalkSpeed(0.3F);
                                 HmapMananger.ajoutHmap(uuid,5);
                                 break;
                             case "6":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D);
+                                p.setWalkSpeed(0.6F);
                                 HmapMananger.ajoutHmap(uuid,6);
                                 break;
                             case "7":
                                 p.setHealthScale(16);
                                 p.setMaxHealth(16D);
+                                p.setWalkSpeed(0.8F);
                                 HmapMananger.ajoutHmap(uuid,7);
                                 break;
                             case "8":
                                 p.setHealthScale(16D);
                                 p.setMaxHealth(16D );
+                                p.setWalkSpeed(0.2F * 0.75F);
                                 HmapMananger.ajoutHmap(uuid,8);
                                 break;
                             case "9":
                                 p.setHealthScale(12);
                                 p.setMaxHealth(12D);
+                                p.setWalkSpeed(0.5F);
                                 HmapMananger.ajoutHmap(uuid,9);
                                 break;
                             case "10":
+                                p.setWalkSpeed(0.4F);
                                 HmapMananger.ajoutHmap(uuid,10);
 
                                 break;
                             case "11":
                                 p.setHealthScale(26);
                                 p.setMaxHealth(26D );
+                                p.setWalkSpeed(0.8F);
                                 HmapMananger.ajoutHmap(uuid,11);
                                 break;
                             case "12":

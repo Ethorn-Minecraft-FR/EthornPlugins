@@ -217,9 +217,4 @@ public class StatisticManager {
 
         return equiped;
     }
-    public static int getSpeedStats(int castId){
-        int speed = 0;
-
-        return speed;
-    }
 }
