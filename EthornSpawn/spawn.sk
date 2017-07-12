@@ -6,6 +6,8 @@ command /spawn:
       teleport player to {spawnAsgard}
     if player is in world "Ethorn":
       teleport player to {spawnEthorn}
+    if player is in world "zestiria_nether":
+      teleport player to {spawnEthorn}
 
 command /setspawn:
   permission: Dieu-Unique
