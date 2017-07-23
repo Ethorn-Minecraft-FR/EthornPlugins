@@ -179,6 +179,11 @@ public class ListenerPlayer implements Listener {
                                 p.setMaxHealth(50D);
                                 HmapMananger.ajoutHmap(uuid,16);
                                 break;
+                            case "17":
+                                p.setHealthScale(50);
+                                p.setMaxHealth(50D);
+                                HmapMananger.ajoutHmap(uuid,17);
+                                break;
                             default:
                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");
                                 e.getPlayer().kickPlayer("Contact un admin sur le discord du serveur. Erreur (Not in database)");
