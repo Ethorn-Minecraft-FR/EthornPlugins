@@ -246,5 +246,15 @@ public class ListenerPlayer implements Listener {
         Integer data = Main.playerLink.get(uuid);
         HmapMananger.valueRemoveHmap(uuid,data);
     }
+
+    @EventHandler
+    public void playerEatEvent(PlayerItemConsumeEvent e){
+        Player p = e.getPlayer();
+        UUID UUID = p.getUniqueId();
+        Integer data = Main.playerLink.get(UUID);
+        Material item = e.getItem().getType();
+        p.sendMessage("[ETHORN-DEV] Vous utilisez l'iem suivant :" + item);
+
+    }
 }
 
