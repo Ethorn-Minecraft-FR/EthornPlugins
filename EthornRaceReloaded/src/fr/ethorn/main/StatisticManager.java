@@ -1,7 +1,5 @@
 package fr.ethorn.main;
 
-
-
 import org.bukkit.entity.Player;
 
 public class StatisticManager {
@@ -36,10 +34,20 @@ public class StatisticManager {
                 defensevalue = 4;
                 break;
             case 6:
-                defensevalue = 2;
+                if(stuff){
+                    defensevalue = 4;
+                    return defensevalue;
+                }else {
+                    defensevalue = 2;
+                }
                 break;
             case 7:
-                defensevalue = 1;
+                if(stuff){
+                    defensevalue = 3;
+                    return defensevalue;
+                }else {
+                    defensevalue = 2;
+                }
                 break;
             case 8:
                 if(stuff){
@@ -72,6 +80,13 @@ public class StatisticManager {
             case 14:
                 defensevalue = 4;
                 break;
+            case 15:
+                if(stuff){
+                    defensevalue = 4;
+                    return defensevalue;
+                }else {
+                    defensevalue = 2;
+                }
             default:
                 break;
         }
@@ -126,6 +141,9 @@ public class StatisticManager {
             case 14:
                 Damagevalue = 4;
                 break;
+            case 15:
+                Damagevalue = 1;
+                break;
             default:
                 break;
         }
@@ -143,22 +161,23 @@ public class StatisticManager {
                 break;
             case 2:
             case 3:
-                if (player.getInventory().getBoots().getData().getItemType().toString().equals("GOLD_BOOTS")){
-                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("GOLD_CHESTPLATE")){
+                if (player.getInventory().getBoots().getData().getItemType().toString().equals("GOLD_BOOTS")) {
+                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("GOLD_CHESTPLATE")) {
                         if (player.getInventory().getHelmet().getData().getItemType().toString().equals("GOLD_HELMET")) {
                             if (player.getInventory().getLeggings().getData().getItemType().toString().equals("GOLD_LEGGINGS")) {
 
                                 return true;
-                            }{
+                            }
+                            {
                                 equiped = false;
                             }
-                        }else{
+                        } else {
                             equiped = false;
                         }
-                    }else{
+                    } else {
                         equiped = false;
                     }
-                }else{
+                } else {
                     equiped = false;
                 }
                 break;
@@ -171,31 +190,45 @@ public class StatisticManager {
                 equiped = true;
                 break;
             case 6:
-
-                equiped = true;
-                break;
             case 7:
-
-                equiped = true;
+                if (player.getInventory().getBoots().getData().getItemType().toString().equals("LEATHER_BOOTS")) {
+                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("LEATHER_CHESTPLATE")) {
+                        if (player.getInventory().getHelmet().getData().getItemType().toString().equals("LEATHER_HELMET")) {
+                            if (player.getInventory().getLeggings().getData().getItemType().toString().equals("LEATHER_LEGGINGS")) {
+                                return true;
+                            }
+                            {
+                                equiped = false;
+                            }
+                        } else {
+                            equiped = false;
+                        }
+                    } else {
+                        equiped = false;
+                    }
+                } else {
+                    equiped = false;
+                }
                 break;
             case 8:
             case 9:
-                if (player.getInventory().getBoots().getData().getItemType().toString().equals("CHAINMAIL_BOOTS")){
-                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("CHAINMAIL_CHESTPLATE")){
+                if (player.getInventory().getBoots().getData().getItemType().toString().equals("CHAINMAIL_BOOTS")) {
+                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("CHAINMAIL_CHESTPLATE")) {
                         if (player.getInventory().getHelmet().getData().getItemType().toString().equals("CHAINMAIL_HELMET")) {
                             if (player.getInventory().getLeggings().getData().getItemType().toString().equals("CHAINMAIL_LEGGINGS")) {
 
                                 return true;
-                            }{
+                            }
+                            {
                                 equiped = false;
                             }
-                        }else{
+                        } else {
                             equiped = false;
                         }
-                    }else{
+                    } else {
                         equiped = false;
                     }
-                }else{
+                } else {
                     equiped = false;
                 }
                 break;
@@ -215,12 +248,33 @@ public class StatisticManager {
 
                 equiped = true;
                 break;
-            default:
-                equiped = false;
+            case 15:
+                if (player.getInventory().getBoots().getData().getItemType().toString().equals("LEATHER_BOOTS")) {
+                    if (player.getInventory().getChestplate().getData().getItemType().toString().equals("LEATHER_CHESTPLATE")) {
+                        if (player.getInventory().getHelmet().getData().getItemType().toString().equals("LEATHER_HELMET")) {
+                            if (player.getInventory().getLeggings().getData().getItemType().toString().equals("LEATHER_LEGGINGS")) {
 
+                                return true;
+                            }
+                            {
+                                equiped = false;
+                            }
+                        } else {
+                            equiped = false;
+                        }
+                    } else {
+                        equiped = false;
+                    }
+                } else {
+                    equiped = false;
+                }
                 break;
-        }
+        default:
+        equiped = false;
+
+        break;
+    }
 
         return equiped;
-    }
+}
 }
