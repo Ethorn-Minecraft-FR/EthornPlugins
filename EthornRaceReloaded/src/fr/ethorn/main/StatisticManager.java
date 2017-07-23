@@ -87,6 +87,14 @@ public class StatisticManager {
                 }else {
                     defensevalue = 2;
                 }
+            case 16:
+                if(stuff){
+                    defensevalue = 6;
+                    return defensevalue;
+                }else {
+                    defensevalue = 4;
+                }
+                break;
             default:
                 break;
         }
@@ -143,6 +151,9 @@ public class StatisticManager {
                 break;
             case 15:
                 Damagevalue = 1;
+                break;
+            case 16:
+                Damagevalue = 3;
                 break;
             default:
                 break;
@@ -212,6 +223,7 @@ public class StatisticManager {
                 break;
             case 8:
             case 9:
+            case 16:
                 if (player.getInventory().getBoots().getData().getItemType().toString().equals("CHAINMAIL_BOOTS")) {
                     if (player.getInventory().getChestplate().getData().getItemType().toString().equals("CHAINMAIL_CHESTPLATE")) {
                         if (player.getInventory().getHelmet().getData().getItemType().toString().equals("CHAINMAIL_HELMET")) {
