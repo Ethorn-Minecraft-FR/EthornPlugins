@@ -79,8 +79,12 @@ public class ListenerPlayer implements Listener {
  * 9 = Tellurique --> Gnome
  * 10 = Ethnique --> Humain
  * 11 = Ethnique --> Homme-bête
- * 12 = Divine -->  dieu unique
+ * 12 = Divine -->  dieu unique KamiTehto
  * 13 = Divine --> dieu antique
+ * 14 = Akulaz | Race divine, antique | Damné
+ * 15 =  Nysis | Race Divine, antique | Pur
+ * 16 = M0nz3rnam3 | Race Divine, antique | Tellurien
+ * 17 = Goldoeur | Race divine, antique | Ethnien
  */
                         switch (dataload.getObject(1).toString()){
                             case "1":
@@ -159,6 +163,11 @@ public class ListenerPlayer implements Listener {
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
                                 HmapMananger.ajoutHmap(uuid,13);
+                                break;
+                            case "14":
+                                p.setHealthScale(50);
+                                p.setMaxHealth(50D);
+                                HmapMananger.ajoutHmap(uuid,14);
                                 break;
                             default:
                                 System.out.print("le joueur : " +e.getPlayer().getName() + "N'est pas valide dans la bdd");

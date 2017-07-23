@@ -69,6 +69,9 @@ public class StatisticManager {
             case 13:
                 defensevalue = 0;
                 break;
+            case 14:
+                defensevalue = 4;
+                break;
             default:
                 break;
         }
@@ -119,6 +122,9 @@ public class StatisticManager {
                 break;
             case 13:
                 Damagevalue = 1;
+                break;
+            case 14:
+                Damagevalue = 4;
                 break;
             default:
                 break;
