@@ -10,6 +10,10 @@ import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -112,12 +116,14 @@ public class ListenerPlayer implements Listener {
                                 p.setHealthScale(30);
                                 p.setMaxHealth(30D);
                                 p.setWalkSpeed(0.175F);
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 99999 * 20, 1));
                                 HmapMananger.ajoutHmap(uuid,4);
                                 break;
                             case "5":
                                 p.setHealthScale(40);
                                 p.setMaxHealth(40D);
                                 p.setWalkSpeed(0.175F);
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 99999 * 20, 1));
                                 HmapMananger.ajoutHmap(uuid,5);
                                 break;
                             case "6":
@@ -340,6 +346,52 @@ public class ListenerPlayer implements Listener {
                     e.getPlayer().kickPlayer("Contact un admin sur le discord du serveur. Erreur (PlayerItemConsumeEvent switch error)");
                     break;
 
+        }
+    }
+
+    @EventHandler
+    public void playerRespawnEvent(PlayerRespawnEvent e){
+        Player p = e.getPlayer();
+        UUID UUID = p.getUniqueId();
+        Integer data = Main.playerLink.get(UUID);
+        switch (data) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+            case 5:
+                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 99999 * 20, 1));
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+            case 10:
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
+            default:
+                e.getPlayer().kickPlayer("Contact un admin sur le discord du serveur. Erreur (PlayerRespawnEvent switch error)");
+                break;
         }
     }
 }
