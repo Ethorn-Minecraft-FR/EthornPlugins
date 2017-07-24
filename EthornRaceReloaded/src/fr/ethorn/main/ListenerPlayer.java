@@ -6,6 +6,7 @@ import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -273,12 +274,73 @@ public class ListenerPlayer implements Listener {
 
     @EventHandler
     public void playerEatEvent(PlayerItemConsumeEvent e){
-        Player p = e.getPlayer();
-        UUID UUID = p.getUniqueId();
-        Integer data = Main.playerLink.get(UUID);
-        Material item = e.getItem().getType();
-        p.sendMessage("[ETHORN-DEV] Vous utilisez l'iem suivant :" + item);
 
+            Player p = e.getPlayer();
+
+            UUID UUID = p.getUniqueId();
+            Integer data = Main.playerLink.get(UUID);
+            int nourritureId = FoodManager.getFoodType(e.getItem().getType());
+            switch (data) {
+                case 1:
+                    break;
+                case 2:
+                case 3:
+                    if (nourritureId == 2 || nourritureId == 3 || nourritureId == 4 || nourritureId == 9 || nourritureId == 11 || nourritureId == 19 || nourritureId == 20 || nourritureId == 21 || nourritureId == 22 || nourritureId == 25) {
+                        e.getPlayer().setFoodLevel(e.getPlayer().getFoodLevel() + 4);
+                    }else if(nourritureId == 5 || nourritureId == 7 || nourritureId == 8 || nourritureId == 10 || nourritureId == 14 || nourritureId == 15 ||nourritureId == 16 ||nourritureId == 17 || nourritureId == 24 ||nourritureId == 27 ||nourritureId == 28){
+                        e.getPlayer().setFoodLevel(e.getPlayer().getFoodLevel() + 4);
+                    }
+                    break;
+                case 4:
+                    if(nourritureId == 19 ||nourritureId == 20 ||nourritureId  == 21 || nourritureId == 22 || nourritureId == 25 || nourritureId == 18 ){
+                    }else{
+                        e.setCancelled(true);
+                    }
+                    break;
+                case 5:
+                    if(nourritureId == 19 ||nourritureId == 20 ||nourritureId  == 21 || nourritureId == 22 || nourritureId == 25 ){
+                    }else{
+                        e.setCancelled(true);
+                    }
+                    break;
+                case 6:
+                case 7:
+                    if(nourritureId == 19 ||nourritureId == 20 ||nourritureId  == 21 || nourritureId == 22 || nourritureId == 25 ){
+                        //todo 80% chance hunger 10s
+                    }else{
+                    }
+                    break;
+                case 8:
+                case 9:
+                    if (nourritureId == 2 || nourritureId == 3 || nourritureId == 4 || nourritureId == 9 || nourritureId == 11 || nourritureId == 19 || nourritureId == 20 || nourritureId == 21 || nourritureId == 22 || nourritureId == 25) {
+                        e.getPlayer().setFoodLevel(e.getPlayer().getFoodLevel() + 2);
+                    }
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    if(nourritureId == 19 ||nourritureId == 20 ||nourritureId  == 21 || nourritureId == 22 || nourritureId == 25 ){
+                    }else{
+                        e.setCancelled(true);
+                    }
+                    break;
+                case 12:
+                    break;
+                case 13:
+                    break;
+                case 14:
+                    break;
+                case 15:
+                    break;
+                case 16:
+                    break;
+                case 17:
+                   break;
+                default:
+                    e.getPlayer().kickPlayer("Contact un admin sur le discord du serveur. Erreur (PlayerItemConsumeEvent switch error)");
+                    break;
+
+        }
     }
 }
 
