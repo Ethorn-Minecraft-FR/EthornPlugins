@@ -176,11 +176,13 @@ public class ListenerPlayer implements Listener {
                             case "14":
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 99999 * 20, 1));
                                 HmapMananger.ajoutHmap(uuid,14);
                                 break;
                             case "15":
                                 p.setHealthScale(50);
                                 p.setMaxHealth(50D);
+                                p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999 * 20, 1));
                                 HmapMananger.ajoutHmap(uuid,15);
                                 break;
                             case "16":
@@ -339,6 +341,8 @@ public class ListenerPlayer implements Listener {
                 case 14:
                     break;
                 case 15:
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 99999 * 20, 1));
+
                     break;
                 case 16:
                     break;
@@ -384,6 +388,7 @@ public class ListenerPlayer implements Listener {
             case 13:
                 break;
             case 14:
+                p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 99999 * 20, 1));
                 break;
             case 15:
                 break;
