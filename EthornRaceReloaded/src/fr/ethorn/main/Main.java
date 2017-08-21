@@ -40,7 +40,7 @@ public class Main extends JavaPlugin {
         this.getCommand("ethorn").setExecutor(new AddPlayerCommand());
 
         try{
-            SQL = new SQLConnection("jdbc:mysql://", "minecraft107.omgserv.com", "minecraft_135086", "minecraft_135086", "root66");
+            SQL = new SQLConnection("jdbc:mysql://", "localhost", "ethorn", "root", "root66");
             SQL.connection();
         }catch (ClassCastException e) {
             e.printStackTrace();
